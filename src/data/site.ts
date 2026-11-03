@@ -22,6 +22,10 @@ export const site = {
   assinatura: `${nome} · ${titulo} · ${cbpc}`,
   assinaturaPipe: `${nome} | ${titulo} | ${cbpc}`,
   fraseMarca: 'Onde a sua fala encontra espaço, a sua mente encontra alívio.',
+  formacaoLinhas: [
+    'Certificada pelo Instituto Superior de Psicanálise do Brasil (ISPB).',
+    `Filiada ao Conselho Brasileiro de Psicanálise Clínica (${cbpc}).`,
+  ],
   formacao: `Certificada pelo Instituto Superior de Psicanálise do Brasil (ISPB). Filiada ao Conselho Brasileiro de Psicanálise Clínica (${cbpc}).`,
 
   telefone,
@@ -76,5 +80,7 @@ export const site = {
     abrirMenu: 'Abrir menu de navegação',
     fecharMenu: 'Fechar menu de navegação',
     irParaInicio: 'Iocyene Barbosa — Voltar ao início',
+    whatsappCabecalho: 'Conversar pelo WhatsApp',
+    instagramCabecalho: 'Acessar perfil no Instagram',
   },
 } as const;

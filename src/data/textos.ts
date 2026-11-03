@@ -37,6 +37,7 @@ export const textos = {
       'Presencial e online',
       site.cbpc,
     ],
+    notaFormacaoLinhas: site.formacaoLinhas,
     notaFormacao: site.formacao,
   },
 

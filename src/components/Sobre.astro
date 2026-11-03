@@ -37,10 +37,14 @@ import TituloSecao from './ui/TituloSecao.astro';
       }
     </ul>
 
-    <p
-      class="font-frase italic font-semibold text-[26px] leading-snug text-verde text-center max-w-3xl mx-auto pt-6 border-t border-dourado/50"
+    <div
+      class="font-frase italic font-semibold text-[26px] leading-snug text-verde text-center max-w-3xl mx-auto pt-6 border-t border-dourado/50 space-y-1.5"
     >
-      {textos.sobre.notaFormacao}
-    </p>
+      {
+        textos.sobre.notaFormacaoLinhas.map((linha) => (
+          <p>{linha}</p>
+        ))
+      }
+    </div>
   </div>
 </section>
