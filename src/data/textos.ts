@@ -3,7 +3,7 @@ import { site } from './site';
 
 export const textos = {
   hero: {
-    sobretitulo: 'Psicanálise clínica • Goiânia – GO',
+    sobretitulo: 'Psicanálise clínica',
     titulo: site.fraseMarca,
     tituloPartes: {
       inicio: 'Onde a sua ',

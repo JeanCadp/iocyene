@@ -1,13 +1,9 @@
-import { formatarResumoModalidade } from './agenda';
 import { site } from './site';
 
 export interface FaqItem {
   pergunta: string;
   resposta: string;
 }
-
-const resumoPresencial = formatarResumoModalidade('presencial', ' e ');
-const resumoOnline = formatarResumoModalidade('online', ' e ');
 
 export const faq: FaqItem[] = [
   {
@@ -22,7 +18,8 @@ export const faq: FaqItem[] = [
   },
   {
     pergunta: 'Qual a diferença entre presencial e online?',
-    resposta: `Nenhuma em qualidade técnica, rigor ético e sigilo. O presencial acontece no consultório do ${site.bairro} (${resumoPresencial}). O online é por videochamada (${resumoOnline}).`,
+    resposta:
+      'Nenhuma em qualidade técnica, rigor ético e sigilo. O atendimento presencial acontece no consultório no Jardim América, em Goiânia, e o atendimento online é realizado por videochamada.',
   },
   {
     pergunta: 'Como sei se a psicanálise é indicada para mim?',
@@ -46,6 +43,6 @@ export const faq: FaqItem[] = [
   },
   {
     pergunta: 'Como agendar a primeira sessão?',
-    resposta: `Pelo WhatsApp ${site.telefone}. Escolha a modalidade e o melhor horário entre os disponíveis.`,
+    resposta: `Clicando no ícone do WhatsApp aqui do site ou adicionando o contato ${site.telefoneRodape}. Escolha a modalidade e o melhor horário entre os disponíveis.`,
   },
 ];

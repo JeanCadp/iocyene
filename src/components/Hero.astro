@@ -60,17 +60,21 @@ import Filete from './ui/Filete.astro';
           {textos.hero.texto}
         </p>
 
+        <!-- Conheça meu trabalho à esquerda e Agende pelo WhatsApp à direita, ambos com o mesmo tamanho -->
         <div
           class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8"
         >
-          <BotaoWhatsapp rotuloSuperior={site.botaoWhatsappRotulo} />
-
           <a
             href={textos.hero.botaoSecundario.href}
-            class="inline-flex items-center justify-center rounded-full border-2 border-verde px-7 py-4 font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde hover:bg-verde hover:text-marfim transition-colors"
+            class="inline-flex items-center justify-center w-full sm:w-[280px] h-14 rounded-full border-2 border-verde px-6 font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde hover:bg-verde hover:text-marfim transition-colors whitespace-nowrap"
           >
             {textos.hero.botaoSecundario.label}
           </a>
+
+          <BotaoWhatsapp
+            variante="hero"
+            texto={site.botaoWhatsappRotulo}
+          />
         </div>
 
         <div class="pt-4 border-t border-dourado/60 space-y-1.5">
