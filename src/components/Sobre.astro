@@ -1,0 +1,47 @@
+---
+import { textos } from '../data/textos';
+import TituloSecao from './ui/TituloSecao.astro';
+---
+
+<section
+  id="sobre"
+  aria-labelledby="titulo-sobre"
+  class="py-20 md:py-28 bg-areia border-y border-dourado/40"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <TituloSecao
+      sobretitulo={textos.sobre.sobretitulo}
+      titulo={textos.sobre.titulo}
+      id="titulo-sobre"
+    />
+
+    <div class="space-y-6 text-center md:text-left mb-10">
+      {
+        textos.sobre.paragrafos.map((paragrafo) => (
+          <p class="font-frase text-xl sm:text-2xl text-texto leading-relaxed">
+            {paragrafo}
+          </p>
+        ))
+      }
+    </div>
+
+    <ul
+      class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10"
+    >
+      {
+        textos.sobre.selos.map((selo) => (
+          <li class="font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde bg-champanhe border border-dourado rounded-full px-5 py-2.5">
+            {selo}
+          </li>
+        ))
+      }
+    </ul>
+
+    <p
+      class="font-frase italic font-semibold text-[26px] leading-snug text-verde text-center pt-6 border-t border-dourado/50"
+    >
+      {textos.sobre.notaFormacao}
+    </p>
+  </div>
+</section>
+

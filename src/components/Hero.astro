@@ -1,0 +1,107 @@
+---
+import { Image } from 'astro:assets';
+import fotoImg from '../assets/foto.jpg';
+import { site } from '../data/site';
+import { textos } from '../data/textos';
+import BotaoWhatsapp from './ui/BotaoWhatsapp.astro';
+import Estrela from './ui/Estrela.astro';
+import Filete from './ui/Filete.astro';
+---
+
+<section
+  id="inicio"
+  aria-labelledby="titulo-hero"
+  class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-champanhe"
+>
+  <!-- Três estrelinhas douradas no canto superior direito do hero -->
+  <div
+    class="pointer-events-none absolute top-24 right-6 sm:right-12 lg:right-20 flex items-start gap-2"
+    aria-hidden="true"
+  >
+    <Estrela size={16} class="text-dourado mt-6" />
+    <Estrela size={38} class="text-dourado" />
+    <Estrela size={20} class="text-dourado mt-8" />
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <!-- Celular: foto acima (order-1). Desktop: foto à direita (lg:order-2) -->
+      <div class="order-1 lg:order-2 lg:col-span-5 relative mx-auto w-full max-w-md lg:max-w-none">
+        <div class="relative overflow-hidden rounded-2xl bg-champanhe">
+          <Image
+            src={fotoImg}
+            alt={textos.hero.fotoAlt}
+            widths={[420, 640, 840]}
+            sizes="(max-width: 1024px) 90vw, 480px"
+            fetchpriority="high"
+            loading="eager"
+            class="w-full h-[420px] sm:h-[500px] lg:h-[580px] object-cover object-top [filter:saturate(0.78)_sepia(0.08)_contrast(1.02)]"
+          />
+          <!-- Fade lateral e na base para o champanhe (nunca exibe fundo cinza cru) -->
+          <div
+            class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,var(--color-champanhe)_0%,transparent_26%),linear-gradient(to_right,var(--color-champanhe)_0%,transparent_18%),linear-gradient(to_left,var(--color-champanhe)_0%,transparent_18%)]"
+            aria-hidden="true"
+          >
+          </div>
+        </div>
+      </div>
+
+      <!-- Celular: texto abaixo (order-2). Desktop: texto à esquerda (lg:order-1) -->
+      <div class="order-2 lg:order-1 lg:col-span-7 text-center lg:text-left">
+        <p
+          class="font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde mb-3"
+        >
+          {textos.hero.sobretitulo}
+        </p>
+
+        <h1
+          id="titulo-hero"
+          class="font-titulo font-semibold text-3xl sm:text-4xl xl:text-5xl uppercase tracking-[0.1em] text-verde leading-tight"
+        >
+          {textos.hero.tituloPartes.inicio}<em
+            class="font-frase italic font-semibold normal-case text-[1.12em] text-verde-medio"
+            >{textos.hero.tituloPartes.destaque1}</em
+          >{textos.hero.tituloPartes.meio}<em
+            class="font-frase italic font-semibold normal-case text-[1.12em] text-verde-medio"
+            >{textos.hero.tituloPartes.destaque2}</em
+          >{textos.hero.tituloPartes.fim}
+        </h1>
+
+        <Filete class="justify-center lg:justify-start" />
+
+        <p
+          class="font-frase text-xl sm:text-2xl text-texto leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8"
+        >
+          {textos.hero.texto}
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8"
+        >
+          <BotaoWhatsapp rotuloSuperior={site.botaoWhatsappRotulo} />
+
+          <a
+            href={textos.hero.botaoSecundario.href}
+            class="inline-flex items-center justify-center rounded-full border-2 border-verde px-7 py-4 font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde hover:bg-verde hover:text-marfim transition-colors"
+          >
+            {textos.hero.botaoSecundario.label}
+          </a>
+        </div>
+
+        <div class="pt-4 border-t border-dourado/60 space-y-1.5">
+          <p
+            class="font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde"
+          >
+            {textos.hero.linhaApoio1}
+          </p>
+          <p
+            class="font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde-medio"
+          >
+            {textos.hero.linhaApoio2}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,40 @@
+---
+import { site } from '../data/site';
+import { textos } from '../data/textos';
+import BotaoWhatsapp from './ui/BotaoWhatsapp.astro';
+import TituloSecao from './ui/TituloSecao.astro';
+---
+
+<section
+  id="contato"
+  aria-labelledby="titulo-contato"
+  class="py-20 md:py-28 bg-champanhe"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <TituloSecao
+      sobretitulo={textos.contato.sobretitulo}
+      titulo={textos.contato.titulo}
+      id="titulo-contato"
+    />
+
+    <p
+      class="font-frase text-xl sm:text-2xl text-texto leading-relaxed max-w-2xl mx-auto mb-10"
+    >
+      {textos.contato.texto}
+    </p>
+
+    <div class="flex flex-col items-center justify-center gap-5">
+      <BotaoWhatsapp texto={textos.contato.botaoWhatsapp} />
+
+      <a
+        href={site.instagramUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center rounded-full border-2 border-verde px-7 py-3.5 font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde hover:bg-verde hover:text-marfim transition-colors"
+      >
+        {textos.contato.botaoInstagram}
+      </a>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import simboloImg from '../assets/simbolo.png';
+import { textos } from '../data/textos';
+import Filete from './ui/Filete.astro';
+---
+
+<section
+  aria-label={textos.citacao.autoria}
+  class="py-20 md:py-28 bg-verde text-marfim"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="flex justify-center mb-6">
+      <div
+        class="w-20 h-20 rounded-full bg-champanhe border-2 border-dourado flex items-center justify-center"
+      >
+        <Image
+          src={simboloImg}
+          alt={textos.psicanalise.simboloAlt}
+          width={120}
+          height={90}
+          loading="lazy"
+          class="w-14 h-auto object-contain mix-blend-multiply"
+        />
+      </div>
+    </div>
+
+    <blockquote>
+      <p
+        class="font-frase italic font-semibold text-[28px] sm:text-3xl md:text-4xl text-marfim leading-relaxed max-w-3xl mx-auto"
+      >
+        “{textos.citacao.frase}”
+      </p>
+
+      <Filete />
+
+      <footer
+        class="font-ui font-semibold text-base tracking-[0.12em] uppercase text-dourado"
+      >
+        {textos.citacao.autoria}
+      </footer>
+    </blockquote>
+  </div>
+</section>
+

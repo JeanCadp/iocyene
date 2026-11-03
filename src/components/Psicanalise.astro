@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import simboloImg from '../assets/simbolo.png';
+import { textos } from '../data/textos';
+import TituloSecao from './ui/TituloSecao.astro';
+---
+
+<section
+  id="psicanalise"
+  aria-labelledby="titulo-psicanalise"
+  class="py-20 md:py-28 bg-champanhe"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-center mb-4">
+      <Image
+        src={simboloImg}
+        alt={textos.psicanalise.simboloAlt}
+        width={192}
+        height={143}
+        loading="lazy"
+        class="w-24 h-auto object-contain mix-blend-multiply"
+      />
+    </div>
+
+    <TituloSecao
+      sobretitulo={textos.psicanalise.sobretitulo}
+      titulo={textos.psicanalise.titulo}
+      id="titulo-psicanalise"
+    />
+
+    <p
+      class="font-frase text-xl sm:text-2xl text-texto leading-relaxed text-center max-w-3xl mx-auto mb-14"
+    >
+      {textos.psicanalise.texto}
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      {
+        textos.psicanalise.pilares.map((pilar) => (
+          <article class="bg-areia border border-dourado rounded-2xl p-8 text-center transition-shadow duration-200 hover:shadow-md">
+            <p class="font-titulo font-semibold text-2xl tracking-[0.15em] text-verde-medio mb-2">
+              {pilar.numero}
+            </p>
+            <h3 class="font-titulo font-semibold text-xl uppercase tracking-[0.12em] text-verde mb-3">
+              {pilar.titulo}
+            </h3>
+            <p class="font-frase text-xl text-texto leading-relaxed">
+              {pilar.texto}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+

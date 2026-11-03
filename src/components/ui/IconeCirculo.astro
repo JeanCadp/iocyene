@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import sofaImg from '../../assets/sofa.png';
+import { textos } from '../../data/textos';
+
+interface Props {
+  tipo: 'presencial' | 'online';
+  rotulo?: string;
+}
+
+const { tipo, rotulo } = Astro.props;
+---
+
+<div class="inline-flex flex-col items-center gap-2.5">
+  <div
+    class="w-20 h-20 rounded-full bg-areia border-2 border-dourado flex items-center justify-center shrink-0"
+  >
+    {
+      tipo === 'presencial' ? (
+        <Image
+          src={sofaImg}
+          alt={textos.modalidades.presencial.iconeAlt}
+          width={116}
+          height={68}
+          class="w-[58px] h-[34px] object-contain mix-blend-multiply"
+          loading="lazy"
+        />
+      ) : (
+        <svg
+          viewBox="-24 -20 48 44"
+          width="44"
+          height="40"
+          aria-hidden="true"
+          class="text-verde"
+        >
+          <rect
+            x="-18"
+            y="-13"
+            width="36"
+            height="24"
+            rx="3"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.8"
+          />
+          <path
+            d="M-10 18 H10 M0 11 V18"
+            stroke="currentColor"
+            stroke-width="2.8"
+            stroke-linecap="round"
+          />
+        </svg>
+      )
+    }
+  </div>
+  {
+    rotulo && (
+      <span class="font-ui text-base font-bold tracking-[0.15em] uppercase text-verde">
+        {rotulo}
+      </span>
+    )
+  }
+</div>
+

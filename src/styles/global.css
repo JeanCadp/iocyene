@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-champanhe: #EFE3D1;
+  --color-areia: #F7F1E7;
+  --color-marfim: #FBF8F2;
+  --color-dourado: #C9B48A;
+  --color-dourado-escuro: #B49B6C;
+  --color-verde: #0F3B36;
+  --color-verde-medio: #1E5A52;
+  --color-texto: #1C2A28;
+
+  --font-titulo: 'Cinzel', Georgia, serif;
+  --font-frase: 'Cormorant Garamond', Georgia, serif;
+  --font-ui: 'Montserrat', Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-champanhe);
+  color: var(--color-texto);
+  font-family: var(--font-frase);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-dourado);
+  outline-offset: 3px;
+}
+

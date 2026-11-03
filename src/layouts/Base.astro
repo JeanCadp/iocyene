@@ -1,0 +1,97 @@
+---
+import { agenda } from '../data/agenda';
+import { site } from '../data/site';
+import '../styles/global.css';
+
+const canonicalUrl = new URL(Astro.url.pathname, site.siteUrl).href;
+const ogImageUrl = new URL('/og.jpg', site.siteUrl).href;
+
+const extrairHora = (h: string): number => parseInt(h.replace(/\D/g, ''), 10);
+const formatarHoraIso = (hora: number): string =>
+  `${String(hora).padStart(2, '0')}:00`;
+
+const openingHoursSpecification = agenda.map((item) => {
+  const primeiraHora = extrairHora(item.horarios[0]);
+  const ultimaHora = extrairHora(item.horarios[item.horarios.length - 1]) + 1;
+  return {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: item.dayOfWeekSchema,
+    opens: formatarHoraIso(primeiraHora),
+    closes: formatarHoraIso(ultimaHora),
+  };
+});
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: `${site.nome} | ${site.titulo}`,
+  description: site.meta.description,
+  url: site.siteUrl,
+  image: ogImageUrl,
+  telephone: `+${site.telefoneE164}`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.endereco.logradouro,
+    addressLocality: 'Goiânia',
+    addressRegion: 'GO',
+    postalCode: '74270-020',
+    addressCountry: 'BR',
+  },
+  sameAs: [site.instagramUrl],
+  openingHoursSpecification,
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{site.meta.title}</title>
+    <meta name="description" content={site.meta.description} />
+    <meta name="theme-color" content={site.themeColor} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={site.meta.locale} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={site.meta.ogTitle} />
+    <meta property="og:description" content={site.meta.ogDescription} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={site.meta.ogTitle} />
+    <meta name="twitter:description" content={site.meta.ogDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JSON-LD ProfessionalService -->
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(jsonLd)}
+    />
+  </head>
+  <body class="bg-champanhe text-texto antialiased selection:bg-verde selection:text-marfim">
+    <a
+      href="#conteudo"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-verde focus:text-marfim focus:px-5 focus:py-3 focus:rounded-full focus:font-ui focus:font-semibold"
+    >
+      {site.a11y.irParaConteudo}
+    </a>
+    <slot />
+  </body>
+</html>
+

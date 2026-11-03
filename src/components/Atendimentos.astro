@@ -1,0 +1,55 @@
+---
+import { demandas } from '../data/demandas';
+import { textos } from '../data/textos';
+import BotaoWhatsapp from './ui/BotaoWhatsapp.astro';
+import Estrela from './ui/Estrela.astro';
+import TituloSecao from './ui/TituloSecao.astro';
+---
+
+<section
+  id="atendimentos"
+  aria-labelledby="titulo-atendimentos"
+  class="py-20 md:py-28 bg-areia border-y border-dourado/40"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <TituloSecao
+      sobretitulo={textos.atendimentos.sobretitulo}
+      titulo={textos.atendimentos.titulo}
+      id="titulo-atendimentos"
+    />
+
+    <p
+      class="font-frase italic font-semibold text-[26px] leading-snug text-verde text-center max-w-3xl mx-auto mb-14"
+    >
+      {textos.atendimentos.texto}
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {
+        demandas.map((demanda) => (
+          <article class="bg-champanhe border border-dourado rounded-2xl p-8 flex flex-col justify-between transition-shadow duration-200 hover:shadow-md">
+            <div>
+              <div class="mb-4">
+                <Estrela size={20} class="text-dourado" />
+              </div>
+              <h3 class="font-titulo font-semibold text-xl uppercase tracking-[0.1em] text-verde mb-3 leading-snug">
+                {demanda.titulo}
+              </h3>
+              <p class="font-frase text-xl text-texto leading-relaxed mb-6">
+                {demanda.texto}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-dourado/50">
+              <BotaoWhatsapp
+                variante="card"
+                texto={textos.atendimentos.botaoCard}
+              />
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,107 @@
+---
+import { Image } from 'astro:assets';
+import logoImg from '../assets/logo.png';
+import { site } from '../data/site';
+import { textos } from '../data/textos';
+---
+
+<footer class="bg-areia border-t border-dourado pt-16 pb-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-dourado/60">
+      <!-- Coluna 1: Lockup da logo verde + CBPC 2022-6892 + frase -->
+      <div class="flex flex-col items-center md:items-start text-center md:text-left">
+        <Image
+          src={logoImg}
+          alt={textos.rodape.logoAlt}
+          width={600}
+          height={314}
+          loading="lazy"
+          class="w-full max-w-[300px] h-auto object-contain mix-blend-multiply mb-2"
+        />
+        <p
+          class="font-ui font-semibold text-base tracking-[0.15em] uppercase text-verde mb-3"
+        >
+          {site.cbpc}
+        </p>
+        <p
+          class="font-frase italic font-semibold text-[26px] leading-snug text-verde"
+        >
+          {site.fraseMarca}
+        </p>
+      </div>
+
+      <!-- Coluna 2: Contato -->
+      <div class="text-center md:text-left">
+        <h2
+          class="font-titulo font-semibold text-lg uppercase tracking-[0.12em] text-verde mb-4"
+        >
+          {textos.rodape.colunaContatoTitulo}
+        </h2>
+        <ul class="space-y-3 font-ui text-base font-medium text-verde">
+          <li>
+            <a
+              href={site.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-verde-medio transition-colors"
+            >
+              {site.telefoneRodape}
+            </a>
+          </li>
+          <li>
+            <a
+              href={site.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-verde-medio transition-colors"
+            >
+              {site.instagram}
+            </a>
+          </li>
+          <li>{site.cidade}</li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Navegação -->
+      <div class="text-center md:text-left">
+        <h2
+          class="font-titulo font-semibold text-lg uppercase tracking-[0.12em] text-verde mb-4"
+        >
+          {textos.rodape.colunaNavegacaoTitulo}
+        </h2>
+        <nav aria-label={site.a11y.navegacaoRodape}>
+          <ul class="space-y-2.5 font-ui text-base font-medium text-verde">
+            {
+              textos.rodape.linksNavegacao.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="hover:text-verde-medio transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div
+      id="privacidade"
+      class="pt-8 text-center space-y-3 max-w-3xl mx-auto"
+    >
+      <p class="font-frase text-lg text-texto leading-relaxed">
+        {textos.rodape.privacidade}
+      </p>
+      <p class="font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde">
+        {site.assinaturaPipe}
+      </p>
+      <p class="font-ui text-base text-verde-medio">
+        {textos.rodape.copyright}
+      </p>
+    </div>
+  </div>
+</footer>
+

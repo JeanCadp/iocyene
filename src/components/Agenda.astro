@@ -1,0 +1,64 @@
+---
+import { agenda, formatarHorarios } from '../data/agenda';
+import { textos } from '../data/textos';
+import BotaoWhatsapp from './ui/BotaoWhatsapp.astro';
+import IconeCirculo from './ui/IconeCirculo.astro';
+import TituloSecao from './ui/TituloSecao.astro';
+---
+
+<section
+  id="agenda"
+  aria-labelledby="titulo-agenda"
+  class="py-20 md:py-28 bg-areia border-t border-dourado/40"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <TituloSecao
+      sobretitulo={textos.agenda.sobretitulo}
+      titulo={textos.agenda.titulo}
+      id="titulo-agenda"
+    />
+
+    <p
+      class="font-frase text-xl sm:text-2xl text-texto leading-relaxed max-w-2xl mx-auto mb-10"
+    >
+      {textos.agenda.texto}
+    </p>
+
+    <div class="flex items-center justify-center gap-10 sm:gap-16 mb-12">
+      <IconeCirculo
+        tipo="presencial"
+        rotulo={textos.modalidades.presencial.rotuloIcone}
+      />
+      <IconeCirculo
+        tipo="online"
+        rotulo={textos.modalidades.online.rotuloIcone}
+      />
+    </div>
+
+    <ul class="max-w-xl mx-auto space-y-5 text-left mb-12">
+      {
+        agenda.map((item) => (
+          <li class="bg-champanhe border border-dourado rounded-2xl px-6 py-5 flex items-start gap-4">
+            <span
+              class="mt-2 w-3.5 h-3.5 rounded-full border-2 border-dourado-escuro shrink-0"
+              aria-hidden="true"
+            />
+            <div>
+              <p class="font-ui font-bold text-xl sm:text-2xl text-verde leading-tight">
+                {item.dia}
+              </p>
+              <p class="font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde mt-1">
+                {item.modalidadeRotulo} · {formatarHorarios(item.horarios)}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="flex justify-center">
+      <BotaoWhatsapp />
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,60 @@
+---
+import { faq } from '../data/faq';
+import { textos } from '../data/textos';
+import TituloSecao from './ui/TituloSecao.astro';
+---
+
+<section
+  id="duvidas"
+  aria-labelledby="titulo-duvidas"
+  class="py-20 md:py-28 bg-champanhe"
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <TituloSecao
+      sobretitulo={textos.duvidas.sobretitulo}
+      titulo={textos.duvidas.titulo}
+      id="titulo-duvidas"
+    />
+
+    <div class="space-y-4" id="lista-faq">
+      {
+        faq.map((item) => (
+          <details class="item-faq group bg-areia border border-dourado rounded-2xl overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+            <summary class="cursor-pointer list-none px-6 py-5 flex items-center justify-between gap-4 font-titulo font-semibold text-lg sm:text-xl uppercase tracking-[0.08em] text-verde">
+              <span>{item.pergunta}</span>
+              <span
+                class="w-8 h-8 rounded-full border border-dourado flex items-center justify-center shrink-0 font-ui text-xl font-semibold text-verde"
+                aria-hidden="true"
+              >
+                <span class="group-open:hidden">＋</span>
+                <span class="hidden group-open:inline">−</span>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 pt-1 border-t border-dourado/40">
+              <p class="font-frase text-xl text-texto leading-relaxed">
+                {item.resposta}
+              </p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const itensFaq = document.querySelectorAll<HTMLDetailsElement>('.item-faq');
+
+  itensFaq.forEach((detalhe) => {
+    detalhe.addEventListener('toggle', () => {
+      if (detalhe.open) {
+        itensFaq.forEach((outro) => {
+          if (outro !== detalhe && outro.open) {
+            outro.open = false;
+          }
+        });
+      }
+    });
+  });
+</script>
+

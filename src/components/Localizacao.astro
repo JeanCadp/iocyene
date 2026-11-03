@@ -1,0 +1,52 @@
+---
+import { site } from '../data/site';
+import { textos } from '../data/textos';
+import BotaoWhatsapp from './ui/BotaoWhatsapp.astro';
+import TituloSecao from './ui/TituloSecao.astro';
+---
+
+<section
+  id="localizacao"
+  aria-labelledby="titulo-localizacao"
+  class="py-20 md:py-28 bg-areia border-y border-dourado/40"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <TituloSecao
+      sobretitulo={textos.localizacao.sobretitulo}
+      titulo={textos.localizacao.titulo}
+      id="titulo-localizacao"
+    />
+
+    <div
+      class="bg-champanhe border border-dourado rounded-2xl p-8 sm:p-10 mb-8 max-w-2xl mx-auto"
+    >
+      <address
+        class="not-italic font-titulo font-semibold text-xl sm:text-2xl uppercase tracking-[0.1em] text-verde leading-relaxed mb-4"
+      >
+        {textos.localizacao.endereco}
+      </address>
+
+      <p
+        class="font-frase italic font-semibold text-[26px] leading-snug text-verde-medio"
+      >
+        {textos.localizacao.texto}
+      </p>
+    </div>
+
+    <div
+      class="flex flex-col sm:flex-row items-center justify-center gap-4"
+    >
+      <a
+        href={site.mapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center rounded-full border-2 border-verde px-7 py-4 font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde hover:bg-verde hover:text-marfim transition-colors"
+      >
+        {textos.localizacao.botaoMapa}
+      </a>
+
+      <BotaoWhatsapp texto={textos.localizacao.botaoWhatsapp} />
+    </div>
+  </div>
+</section>
+

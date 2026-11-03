@@ -1,0 +1,35 @@
+---
+import Filete from './Filete.astro';
+
+interface Props {
+  sobretitulo: string;
+  titulo: string;
+  id?: string;
+  alinhamento?: 'centro' | 'esquerda';
+}
+
+const {
+  sobretitulo,
+  titulo,
+  id,
+  alinhamento = 'centro',
+} = Astro.props;
+
+const isCentro = alinhamento === 'centro';
+---
+
+<div class:list={['mb-10', isCentro ? 'text-center' : 'text-left']}>
+  <p
+    class="font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde mb-2"
+  >
+    {sobretitulo}
+  </p>
+  <h2
+    id={id}
+    class="font-titulo font-semibold text-2xl sm:text-3xl md:text-4xl uppercase tracking-[0.12em] text-verde leading-snug"
+  >
+    {titulo}
+  </h2>
+  <Filete class={isCentro ? 'justify-center' : 'justify-start'} />
+</div>
+

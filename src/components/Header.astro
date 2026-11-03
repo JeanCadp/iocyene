@@ -1,0 +1,155 @@
+---
+import { Image } from 'astro:assets';
+import logoImg from '../assets/logo.png';
+import { site } from '../data/site';
+import { textos } from '../data/textos';
+import BotaoWhatsapp from './ui/BotaoWhatsapp.astro';
+---
+
+<header
+  id="cabecalho"
+  class="fixed top-0 inset-x-0 z-50 bg-champanhe/90 backdrop-blur-sm border-b border-dourado/40 transition-all duration-200"
+>
+  <div
+    class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-1.5 sm:gap-3"
+  >
+    <a
+      href="#inicio"
+      aria-label={site.a11y.irParaInicio}
+      class="shrink-0 flex items-center"
+    >
+      <Image
+        src={logoImg}
+        alt={textos.rodape.logoAlt}
+        width={440}
+        height={230}
+        class="w-[104px] sm:w-[165px] lg:w-[180px] max-w-[220px] h-auto object-contain mix-blend-multiply"
+        loading="eager"
+      />
+    </a>
+
+    <nav
+      aria-label={site.a11y.navegacaoPrincipal}
+      class="hidden xl:flex items-center gap-3 2xl:gap-5"
+    >
+      {
+        site.menu.map((item) => (
+          <a
+            href={item.href}
+            class="font-ui font-semibold text-base tracking-[0.04em] uppercase text-verde hover:text-verde-medio transition-colors py-1 whitespace-nowrap"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+      <BotaoWhatsapp variante="compacto" texto={site.ctaMenu} />
+
+      <button
+        id="botao-menu-mobile"
+        type="button"
+        aria-controls="menu-mobile"
+        aria-expanded="false"
+        aria-label={site.a11y.abrirMenu}
+        data-label-abrir={site.a11y.abrirMenu}
+        data-label-fechar={site.a11y.fecharMenu}
+        class="xl:hidden inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-dourado bg-areia text-verde hover:bg-champanhe transition-colors shrink-0"
+      >
+        <svg
+          id="icone-menu-abrir"
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+        <svg
+          id="icone-menu-fechar"
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+          class="hidden"
+        >
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav
+    id="menu-mobile"
+    aria-label={site.a11y.navegacaoPrincipal}
+    class="hidden xl:hidden bg-areia border-t border-dourado/50 px-4 py-5 shadow-md"
+  >
+    <ul class="flex flex-col gap-3 max-w-7xl mx-auto">
+      {
+        site.menu.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="link-menu-mobile block py-2 px-3 rounded-lg font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde hover:bg-champanhe transition-colors"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const header = document.getElementById('cabecalho');
+  const botao = document.getElementById('botao-menu-mobile');
+  const menu = document.getElementById('menu-mobile');
+  const iconeAbrir = document.getElementById('icone-menu-abrir');
+  const iconeFechar = document.getElementById('icone-menu-fechar');
+  const links = document.querySelectorAll('.link-menu-mobile');
+
+  const atualizarHeader = () => {
+    if (!header) return;
+    if (window.scrollY > 16) {
+      header.classList.add('bg-champanhe', 'shadow-sm');
+      header.classList.remove('bg-champanhe/90');
+    } else {
+      header.classList.remove('bg-champanhe', 'shadow-sm');
+      header.classList.add('bg-champanhe/90');
+    }
+  };
+
+  const definirEstadoMenu = (aberto: boolean) => {
+    if (!botao || !menu || !iconeAbrir || !iconeFechar) return;
+    botao.setAttribute('aria-expanded', String(aberto));
+    const labelAbrir = botao.getAttribute('data-label-abrir') ?? '';
+    const labelFechar = botao.getAttribute('data-label-fechar') ?? '';
+    botao.setAttribute('aria-label', aberto ? labelFechar : labelAbrir);
+    menu.classList.toggle('hidden', !aberto);
+    iconeAbrir.classList.toggle('hidden', aberto);
+    iconeFechar.classList.toggle('hidden', !aberto);
+  };
+
+  botao?.addEventListener('click', () => {
+    const aberto = botao.getAttribute('aria-expanded') === 'true';
+    definirEstadoMenu(!aberto);
+  });
+
+  links.forEach((link) => {
+    link.addEventListener('click', () => definirEstadoMenu(false));
+  });
+
+  window.addEventListener('scroll', atualizarHeader, { passive: true });
+  atualizarHeader();
+</script>
+

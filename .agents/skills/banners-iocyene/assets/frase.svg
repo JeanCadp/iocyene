@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&amp;family=Cormorant+Garamond:ital,wght@1,600;1,700&amp;family=Montserrat:wght@600;700&amp;display=swap');
+      .cinzel{font-family:'Cinzel',Georgia,serif}.corm{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic}.mont{font-family:'Montserrat',Arial,sans-serif}
+    </style>
+    <path id="estrela" d="M0 -1 C0.11 -0.33 0.33 -0.11 1 0 C0.33 0.11 0.11 0.33 0 1 C-0.11 0.33 -0.33 0.11 -1 0 C-0.33 -0.11 -0.11 -0.33 0 -1 Z"/>
+    <mask id="soSimbolo" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+      <rect x="0" y="0" width="1" height="0.66" fill="white"/>
+    </mask>
+  </defs>
+
+  <rect width="1080" height="1350" fill="#EFE3D1"/>
+  <rect x="70" y="70" width="940" height="1210" fill="none" stroke="#C9B48A" stroke-width="1.5" opacity="0.8"/>
+
+  <g fill="#C9B48A">
+    <use href="#estrela" transform="translate(930,150) scale(22)"/>
+    <use href="#estrela" transform="translate(972,192) scale(10)"/>
+    <use href="#estrela" transform="translate(890,190) scale(7)"/>
+  </g>
+
+  <!-- símbolo da logo -->
+  <image href="logo.png" x="300" y="80" width="480" height="240" preserveAspectRatio="xMidYMin meet" mask="url(#soSimbolo)" style="mix-blend-mode:multiply"/>
+
+  <!-- filete superior -->
+  <line x1="380" y1="420" x2="515" y2="420" stroke="#C9B48A" stroke-width="1.5"/>
+  <use href="#estrela" transform="translate(540,420) scale(10)" fill="#C9B48A"/>
+  <line x1="565" y1="420" x2="700" y2="420" stroke="#C9B48A" stroke-width="1.5"/>
+
+  <!-- frase -->
+  <text x="540" y="590" text-anchor="middle" class="corm" font-size="78" font-weight="700" fill="#0F3B36">Pensamento acelerado</text>
+  <text x="540" y="675" text-anchor="middle" class="corm" font-size="78" font-weight="700" fill="#0F3B36">não é falta de controle.</text>
+  <text x="540" y="800" text-anchor="middle" class="corm" font-size="78" font-weight="700" fill="#B49B6C">É excesso do que ainda</text>
+  <text x="540" y="885" text-anchor="middle" class="corm" font-size="78" font-weight="700" fill="#B49B6C">não foi dito.</text>
+
+  <!-- filete inferior -->
+  <line x1="380" y1="975" x2="515" y2="975" stroke="#C9B48A" stroke-width="1.5"/>
+  <use href="#estrela" transform="translate(540,975) scale(10)" fill="#C9B48A"/>
+  <line x1="565" y1="975" x2="700" y2="975" stroke="#C9B48A" stroke-width="1.5"/>
+
+  <!-- assinatura -->
+  <text x="540" y="1095" text-anchor="middle" class="cinzel" font-size="42" font-weight="600" fill="#0F3B36" letter-spacing="4">IOCYENE BARBOSA</text>
+  <text x="540" y="1135" text-anchor="middle" class="mont" font-size="16" font-weight="700" fill="#0F3B36" letter-spacing="5">PSICANALISTA CLÍNICA</text>
+  <text x="540" y="1166" text-anchor="middle" class="mont" font-size="16" font-weight="700" fill="#0F3B36" letter-spacing="4">CBPC 2022-6892</text>
+</svg>
