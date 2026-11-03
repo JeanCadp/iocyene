@@ -25,7 +25,7 @@ export const textos = {
   },
 
   sobre: {
-    sobretitulo: 'Sobre Iocyene',
+    sobretitulo: 'Sobre mim',
     titulo: 'Uma escuta atenta à sua singularidade.',
     paragrafos: [
       'Sou Iocyene Barbosa, psicanalista clínica. Meu trabalho é oferecer um ambiente seguro, ético e livre de julgamentos para quem busca compreender suas emoções, superar conflitos e reencontrar o equilíbrio psíquico.',

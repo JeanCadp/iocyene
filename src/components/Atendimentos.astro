@@ -1,7 +1,6 @@
 ---
 import { demandas } from '../data/demandas';
 import { textos } from '../data/textos';
-import BotaoWhatsapp from './ui/BotaoWhatsapp.astro';
 import Estrela from './ui/Estrela.astro';
 import TituloSecao from './ui/TituloSecao.astro';
 ---
@@ -27,29 +26,19 @@ import TituloSecao from './ui/TituloSecao.astro';
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {
         demandas.map((demanda) => (
-          <article class="bg-champanhe border border-dourado rounded-2xl p-8 flex flex-col justify-between transition-shadow duration-200 hover:shadow-md">
-            <div>
-              <div class="mb-4">
-                <Estrela size={20} class="text-dourado" />
-              </div>
-              <h3 class="font-titulo font-semibold text-xl uppercase tracking-[0.1em] text-verde mb-3 leading-snug">
-                {demanda.titulo}
-              </h3>
-              <p class="font-frase text-xl text-texto leading-relaxed mb-6">
-                {demanda.texto}
-              </p>
+          <article class="bg-champanhe border border-dourado rounded-2xl p-8 flex flex-col transition-shadow duration-200 hover:shadow-md">
+            <div class="mb-4">
+              <Estrela size={20} class="text-dourado" />
             </div>
-
-            <div class="pt-4 border-t border-dourado/50">
-              <BotaoWhatsapp
-                variante="card"
-                texto={textos.atendimentos.botaoCard}
-              />
-            </div>
+            <h3 class="font-titulo font-semibold text-xl uppercase tracking-[0.1em] text-verde mb-3 leading-snug">
+              {demanda.titulo}
+            </h3>
+            <p class="font-frase text-xl text-texto leading-relaxed">
+              {demanda.texto}
+            </p>
           </article>
         ))
       }
     </div>
   </div>
 </section>
-

@@ -1,7 +1,6 @@
 ---
 import { site } from '../data/site';
 import { textos } from '../data/textos';
-import BotaoWhatsapp from './ui/BotaoWhatsapp.astro';
 import TituloSecao from './ui/TituloSecao.astro';
 ---
 
@@ -47,9 +46,7 @@ import TituloSecao from './ui/TituloSecao.astro';
       </div>
     </div>
 
-    <div
-      class="flex flex-col sm:flex-row items-center justify-center gap-4"
-    >
+    <div class="flex justify-center">
       <a
         href={site.mapsUrl}
         target="_blank"
@@ -58,8 +55,6 @@ import TituloSecao from './ui/TituloSecao.astro';
       >
         {textos.localizacao.botaoMapa}
       </a>
-
-      <BotaoWhatsapp texto={textos.localizacao.botaoWhatsapp} />
     </div>
   </div>
 </section>
