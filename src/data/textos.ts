@@ -121,6 +121,7 @@ export const textos = {
     titulo: 'Um espaço de acolhimento em Goiânia.',
     endereco: site.endereco.completo,
     texto: 'Atendimento presencial aos sábados, mediante agendamento.',
+    mapaTitle: 'Mapa de localização do consultório de Iocyene Barbosa no Jardim América, Goiânia',
     botaoMapa: 'Como chegar ↗',
     botaoWhatsapp: 'Agendar pelo WhatsApp',
   },

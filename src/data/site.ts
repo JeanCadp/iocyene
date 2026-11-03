@@ -43,8 +43,9 @@ export const site = {
     cep,
     completo: `${logradouro} · ${bairro} · ${cidade} · ${cep}`,
   },
-  mapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=Av.+C-205,+400,+Jardim+Am%C3%A9rica,+Goi%C3%A2nia',
+  mapsUrl: 'https://maps.app.goo.gl/z2EKtc8k4B73asrY9',
+  mapsEmbedUrl:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.5388561548434!2d-49.285381!3d-16.6999441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef1dc13efa5a3%3A0x9542aecacc7073c3!2sInstituto%20Superior%20de%20Psican%C3%A1lise%20do%20Brasil!5e0!3m2!1spt-BR!2sbr!4v1793730448454!5m2!1spt-BR!2sbr',
 
   siteUrl: import.meta.env.SITE ?? 'https://iocyene.vercel.app',
   themeColor: '#0F3B36',

@@ -10,7 +10,7 @@ import TituloSecao from './ui/TituloSecao.astro';
   aria-labelledby="titulo-localizacao"
   class="py-20 md:py-28 bg-areia border-y border-dourado/40"
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <TituloSecao
       sobretitulo={textos.localizacao.sobretitulo}
       titulo={textos.localizacao.titulo}
@@ -18,19 +18,33 @@ import TituloSecao from './ui/TituloSecao.astro';
     />
 
     <div
-      class="bg-champanhe border border-dourado rounded-2xl p-8 sm:p-10 mb-8 max-w-2xl mx-auto"
+      class="bg-champanhe border border-dourado rounded-2xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto shadow-sm"
     >
       <address
-        class="not-italic font-titulo font-semibold text-xl sm:text-2xl uppercase tracking-[0.1em] text-verde leading-relaxed mb-4"
+        class="not-italic font-titulo font-semibold text-xl sm:text-2xl uppercase tracking-[0.1em] text-verde leading-relaxed mb-3"
       >
         {textos.localizacao.endereco}
       </address>
 
       <p
-        class="font-frase italic font-semibold text-[26px] leading-snug text-verde-medio"
+        class="font-frase italic font-semibold text-[26px] leading-snug text-verde-medio mb-6"
       >
         {textos.localizacao.texto}
       </p>
+
+      <div class="overflow-hidden rounded-xl border border-dourado bg-areia">
+        <iframe
+          src={site.mapsEmbedUrl}
+          title={textos.localizacao.mapaTitle}
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          class="w-full h-[300px] sm:h-[380px] md:h-[420px] block"
+        ></iframe>
+      </div>
     </div>
 
     <div
@@ -49,4 +63,3 @@ import TituloSecao from './ui/TituloSecao.astro';
     </div>
   </div>
 </section>
-
