@@ -3,236 +3,117 @@ import { Image } from 'astro:assets';
 import fotoImg from '../assets/foto2.jpg';
 import { site } from '../data/site';
 import { textos } from '../data/textos';
+import BotaoWhatsapp from './ui/BotaoWhatsapp.astro';
+import Filete from './ui/Filete.astro';
 ---
 
 <section
   id="inicio"
   aria-labelledby="titulo-hero"
-  class="relative pt-28 pb-16 sm:pt-32 md:pt-36 md:pb-24 overflow-hidden bg-champanhe"
+  class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-champanhe"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- ========================================== -->
-    <!-- VERSÃO DESKTOP / WEB (telas >= lg)         -->
-    <!-- Protótipo 1                                -->
-    <!-- ========================================== -->
-    <div class="hidden lg:grid grid-cols-12 gap-12 xl:gap-16 items-center">
-      <!-- Coluna de Texto (Esquerda) -->
-      <div class="col-span-7 text-left">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="w-8 h-px bg-dourado-escuro" aria-hidden="true"></span>
-          <p
-            class="font-ui font-semibold text-sm xl:text-base tracking-[0.08em] uppercase text-verde"
-          >
-            {textos.hero.sobretitulo}
-          </p>
-        </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
+      <!-- Coluna de Texto: Celular acima (order-1), Desktop à esquerda (lg:order-1) -->
+      <div class="order-1 lg:order-1 lg:col-span-7 text-center lg:text-left">
+        <p
+          class="font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde mb-3"
+        >
+          {textos.hero.sobretitulo}
+        </p>
 
         <h1
           id="titulo-hero"
-          class="font-frase text-4xl sm:text-5xl xl:text-[3.65rem] text-texto leading-[1.14] tracking-[-0.01em] mb-6"
+          class="font-frase font-medium text-4xl sm:text-5xl xl:text-[3.5rem] text-texto leading-[1.16] tracking-[-0.01em]"
         >
-          {textos.hero.tituloPartes.inicio}<em
-            class="font-frase italic font-normal text-dourado-escuro"
-            >{textos.hero.tituloPartes.destaque1}</em
-          >{textos.hero.tituloPartes.meio}<em
-            class="font-frase italic font-normal text-dourado-escuro"
-            >{textos.hero.tituloPartes.destaque2}</em
+          {textos.hero.tituloPartes.inicio}<span
+            class="font-bold text-[1.12em] text-verde-destaque underline decoration-dourado/80 decoration-2 underline-offset-[7px]"
+            >{textos.hero.tituloPartes.destaque1}</span
+          >{textos.hero.tituloPartes.meio}<span
+            class="font-bold text-[1.12em] text-verde-destaque underline decoration-dourado/80 decoration-2 underline-offset-[7px]"
+            >{textos.hero.tituloPartes.destaque2}</span
           >{textos.hero.tituloPartes.fim}
         </h1>
 
+        <Filete class="justify-center lg:justify-start" />
+
         <p
-          class="font-frase text-xl sm:text-2xl text-texto leading-relaxed max-w-xl mb-9"
+          class="font-frase text-xl sm:text-2xl text-texto leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8"
         >
           {textos.hero.texto}
         </p>
 
-        <!-- Botões lado a lado: WhatsApp verde sólido + Conheça meu trabalho contorno -->
-        <div class="flex items-center gap-4">
-          <a
-            href={site.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2.5 bg-verde hover:bg-verde-medio text-marfim rounded-full px-7 h-13 font-ui font-semibold text-sm tracking-[0.06em] uppercase shadow-md hover:shadow-lg transition-all"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="20"
-              height="20"
-              fill="currentColor"
-              class="text-dourado shrink-0"
-              aria-hidden="true"
-            >
-              <path
-                d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.24-8.23 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"
-              ></path>
-            </svg>
-            <span>{textos.hero.botaoPrimario}</span>
-          </a>
-
+        <!-- Conheça meu trabalho à esquerda e Agende pelo WhatsApp à direita, ambos com o mesmo tamanho -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8"
+        >
           <a
             href={textos.hero.botaoSecundario.href}
-            class="inline-flex items-center justify-center rounded-full border-2 border-verde px-7 h-13 font-ui font-semibold text-sm tracking-[0.06em] uppercase text-verde hover:bg-verde hover:text-marfim transition-colors"
+            class="inline-flex items-center justify-center w-full sm:w-[290px] h-14 rounded-full border-2 border-verde px-6 font-ui font-semibold text-sm tracking-[0.08em] uppercase text-verde hover:bg-verde hover:text-marfim transition-colors whitespace-nowrap"
           >
             {textos.hero.botaoSecundario.label}
           </a>
+
+          <BotaoWhatsapp
+            variante="hero"
+            texto={site.botaoWhatsappRotulo}
+          />
+        </div>
+
+        <div class="pt-4 border-t border-dourado/60 space-y-1.5">
+          <p
+            class="font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde"
+          >
+            {textos.hero.linhaApoio1}
+          </p>
+          <p
+            class="font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde-medio"
+          >
+            {textos.hero.linhaApoio2}
+          </p>
         </div>
       </div>
 
-      <!-- Coluna da Imagem em Arco (Direita) -->
-      <div class="col-span-5 relative flex justify-center">
-        <div class="relative w-full max-w-[340px] xl:max-w-[380px]">
-          <!-- Linha de contorno externa em arco ligeiramente deslocada -->
-          <div
-            class="absolute -inset-3.5 xl:-inset-4 rounded-t-full rounded-b-2xl border border-dourado/60 pointer-events-none"
-            aria-hidden="true"
-          >
-          </div>
-
-          <!-- Foto em arco -->
-          <div
-            class="relative rounded-t-full rounded-b-2xl overflow-hidden bg-areia shadow-xl border border-dourado/40 aspect-[4/5.2]"
-          >
-            <Image
-              src={fotoImg}
-              alt={textos.hero.fotoAlt}
-              widths={[420, 640, 840]}
-              sizes="(max-width: 1024px) 90vw, 420px"
-              fetchpriority="high"
-              loading="eager"
-              class="w-full h-full object-cover object-[center_20%]"
-            />
-          </div>
-
-          <!-- Card de identificação no canto inferior esquerdo -->
-          <div
-            class="absolute -bottom-4 -left-4 xl:-bottom-5 xl:-left-6 bg-verde text-marfim px-5 py-4 rounded-2xl shadow-xl z-20 border border-dourado/30"
-          >
-            <p
-              class="font-frase text-xl xl:text-2xl font-semibold text-marfim leading-tight whitespace-nowrap"
-            >
-              {site.nome}
-            </p>
-            <p
-              class="font-ui text-xs xl:text-sm font-semibold tracking-wider text-dourado uppercase mt-1 whitespace-nowrap"
-            >
-              {site.cbpc}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- VERSÃO MOBILE (telas < lg)                 -->
-    <!-- Protótipo 2                                -->
-    <!-- ========================================== -->
-    <div class="block lg:hidden text-left">
-      <!-- Sobretítulo com traço -->
-      <div class="flex items-center gap-2.5 mb-3.5">
-        <span class="w-7 h-px bg-dourado-escuro" aria-hidden="true"></span>
-        <p
-          class="font-ui font-semibold text-xs tracking-[0.08em] uppercase text-verde"
-        >
-          {textos.hero.sobretitulo}
-        </p>
-      </div>
-
-      <!-- Título principal -->
-      <h1
-        class="font-frase text-3xl sm:text-4xl text-texto leading-[1.18] tracking-[-0.01em] mb-4"
+      <!-- Coluna da Imagem: Celular abaixo do texto (order-2), Desktop à direita (lg:order-2) -->
+      <div
+        class="order-2 lg:order-2 lg:col-span-5 relative mx-auto w-full max-w-[320px] sm:max-w-[360px] xl:max-w-[390px] pt-4 sm:pt-0"
       >
-        {textos.hero.tituloPartes.inicio}<em
-          class="font-frase italic font-normal text-dourado-escuro"
-          >{textos.hero.tituloPartes.destaque1}</em
-        >{textos.hero.tituloPartes.meio}<em
-          class="font-frase italic font-normal text-dourado-escuro"
-          >{textos.hero.tituloPartes.destaque2}</em
-        >{textos.hero.tituloPartes.fim}
-      </h1>
-
-      <!-- Parágrafo descritivo -->
-      <p
-        class="font-frase text-lg sm:text-xl text-texto leading-relaxed mb-4 max-w-xl"
-      >
-        {textos.hero.texto}
-      </p>
-
-      <!-- Link textual com seta -->
-      <div class="mb-6">
-        <a
-          href={textos.hero.botaoSecundario.href}
-          class="inline-flex items-center gap-1.5 font-ui font-semibold text-sm tracking-[0.04em] text-verde underline decoration-verde/60 decoration-1 underline-offset-4 hover:text-verde-medio transition-colors"
+        <!-- Linha de contorno externa em arco ligeiramente deslocada -->
+        <div
+          class="absolute -inset-3 sm:-inset-3.5 xl:-inset-4 rounded-t-full rounded-b-2xl border border-dourado/60 pointer-events-none"
+          aria-hidden="true"
         >
-          <span>{textos.hero.botaoSecundario.label}</span>
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
-
-      <!-- Área da Foto em Arco com Botão Sobreposto -->
-      <div class="relative max-w-[290px] sm:max-w-[320px] mx-auto pt-4 pb-6 mt-2">
-        <!-- Botão Agende pelo WhatsApp sobreposto no topo do arco -->
-        <div class="relative z-30 flex justify-center -mb-6">
-          <a
-            href={site.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2.5 bg-verde hover:bg-verde-medio text-marfim border-2 border-champanhe rounded-full px-6 py-3.5 font-ui font-semibold text-xs sm:text-sm tracking-[0.06em] uppercase shadow-lg active:scale-95 transition-transform whitespace-nowrap"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="currentColor"
-              class="text-dourado shrink-0"
-              aria-hidden="true"
-            >
-              <path
-                d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.24-8.23 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"
-              ></path>
-            </svg>
-            <span>{textos.hero.botaoPrimario}</span>
-          </a>
         </div>
 
-        <!-- Estrutura do arco: contorno + foto + badge -->
-        <div class="relative">
-          <!-- Linha de contorno externa em arco -->
-          <div
-            class="absolute -inset-3 sm:-inset-3.5 rounded-t-full rounded-b-2xl border border-dourado/60 pointer-events-none"
-            aria-hidden="true"
-          >
-          </div>
+        <!-- Foto em formato de arco / portal -->
+        <div
+          class="relative rounded-t-full rounded-b-2xl overflow-hidden bg-areia shadow-xl border border-dourado/40 aspect-[4/5.2]"
+        >
+          <Image
+            src={fotoImg}
+            alt={textos.hero.fotoAlt}
+            widths={[420, 640, 840]}
+            sizes="(max-width: 1024px) 90vw, 420px"
+            fetchpriority="high"
+            loading="eager"
+            class="w-full h-full object-cover object-[center_20%]"
+          />
+        </div>
 
-          <!-- Foto em arco -->
-          <div
-            class="relative rounded-t-full rounded-b-2xl overflow-hidden bg-areia shadow-lg border border-dourado/40 aspect-[4/5.2]"
+        <!-- Card de identificação no canto inferior esquerdo da imagem -->
+        <div
+          class="absolute -bottom-4 -left-3 sm:-bottom-5 sm:-left-5 bg-verde text-marfim px-5 py-3.5 rounded-2xl shadow-xl z-20 border border-dourado/30 text-left"
+        >
+          <p
+            class="font-frase text-xl xl:text-2xl font-semibold text-marfim leading-tight whitespace-nowrap"
           >
-            <Image
-              src={fotoImg}
-              alt={textos.hero.fotoAlt}
-              widths={[360, 480]}
-              sizes="90vw"
-              fetchpriority="high"
-              loading="eager"
-              class="w-full h-full object-cover object-[center_20%]"
-            />
-          </div>
-
-          <!-- Card de identificação no canto inferior esquerdo -->
-          <div
-            class="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 bg-verde text-marfim px-4 py-3 rounded-xl shadow-xl z-20 border border-dourado/30"
+            {site.nome}
+          </p>
+          <p
+            class="font-ui text-xs xl:text-sm font-semibold tracking-wider text-dourado uppercase mt-1 whitespace-nowrap"
           >
-            <p
-              class="font-frase text-lg font-semibold text-marfim leading-tight whitespace-nowrap"
-            >
-              {site.nome}
-            </p>
-            <p
-              class="font-ui text-[11px] font-semibold tracking-wider text-dourado uppercase mt-0.5 whitespace-nowrap"
-            >
-              {site.cbpc}
-            </p>
-          </div>
+            {site.cbpc}
+          </p>
         </div>
       </div>
     </div>
