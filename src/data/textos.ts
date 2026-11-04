@@ -3,7 +3,7 @@ import { site } from './site';
 
 export const textos = {
   hero: {
-    sobretitulo: 'Psicanálise clínica',
+    sobretitulo: 'Psicanálise clínica · Goiânia',
     titulo: site.fraseMarca,
     tituloPartes: {
       inicio: 'Onde a sua ',
@@ -13,8 +13,8 @@ export const textos = {
       fim: '.',
     },
     texto:
-      'Um espaço seguro, ético e livre de julgamentos para compreender suas emoções, superar conflitos e reencontrar o equilíbrio psíquico.',
-    botaoPrimario: 'Agendar uma conversa ↗',
+      'Um espaço seguro, ético e livre de julgamentos para compreender suas emoções e reencontrar o equilíbrio psíquico.',
+    botaoPrimario: 'Agende pelo WhatsApp',
     botaoSecundario: {
       label: 'Conheça meu trabalho',
       href: '#sobre',
@@ -131,7 +131,7 @@ export const textos = {
   contato: {
     sobretitulo: 'Vamos conversar?',
     titulo:
-      'Se chegou o momento de dar voz ao que incomoda por dentro, estou aqui para te acompanhar',
+      'Se chegou o momento de dar voz ao que incomoda por dentro, estou aqui para te acompanharla',
     texto:
       'Entre em contato para saber mais sobre os atendimentos e consultar a disponibilidade de horários.',
     botaoWhatsapp: 'Conversar com Iocyene no WhatsApp ↗',
