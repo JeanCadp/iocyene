@@ -23,26 +23,35 @@ const {
       target="_blank"
       rel="noopener noreferrer"
       class:list={[
-        'group inline-flex items-center gap-3.5 sm:gap-4 bg-verde hover:bg-verde-medio text-marfim rounded-full px-5 sm:px-6 py-3.5 max-w-full transition-all duration-200 shadow-sm hover:shadow-md',
+        'group inline-flex items-center justify-center gap-3.5 sm:gap-4 bg-verde hover:bg-verde-medio text-marfim rounded-full max-w-full transition-all duration-200 shadow-sm hover:shadow-md',
+        texto ? 'px-8 py-4' : 'px-5 sm:px-6 py-3.5',
         className,
       ]}
     >
-      <span
-        class="w-11 h-11 rounded-full border-2 border-dourado flex items-center justify-center shrink-0 text-dourado"
-        aria-hidden="true"
-      >
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-          <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.59a1 1 0 0 1-.25 1.01l-2.2 2.19z" />
-        </svg>
-      </span>
-      <span class="flex flex-col text-left leading-tight pr-1 sm:pr-2">
-        <span class="font-ui text-[14px] font-semibold tracking-[0.1em] uppercase text-dourado">
-          {rotuloSuperior}
+      {texto ? (
+        <span class="font-ui text-base font-semibold tracking-[0.1em] uppercase text-marfim whitespace-nowrap">
+          {texto}
         </span>
-        <span class="font-ui text-[24px] font-bold text-marfim tracking-wide mt-0.5 whitespace-nowrap">
-          {site.telefone}
-        </span>
-      </span>
+      ) : (
+        <>
+          <span
+            class="w-11 h-11 rounded-full border-2 border-dourado flex items-center justify-center shrink-0 text-dourado"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.59a1 1 0 0 1-.25 1.01l-2.2 2.19z" />
+            </svg>
+          </span>
+          <span class="flex flex-col text-left leading-tight pr-1 sm:pr-2">
+            <span class="font-ui text-[14px] font-semibold tracking-[0.1em] uppercase text-dourado">
+              {rotuloSuperior}
+            </span>
+            <span class="font-ui text-[24px] font-bold text-marfim tracking-wide mt-0.5 whitespace-nowrap">
+              {site.telefone}
+            </span>
+          </span>
+        </>
+      )}
     </a>
   )
 }

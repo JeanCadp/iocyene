@@ -104,6 +104,7 @@ export const textos = {
     titulo: 'Agenda aberta',
     texto:
       'Sessões de 45 a 50 minutos, em um espaço sigiloso, onde a sua história é ouvida no seu tempo.',
+    botaoWhatsapp: 'Agende seu horário',
   },
 
   citacao: {
@@ -119,7 +120,7 @@ export const textos = {
 
   localizacao: {
     sobretitulo: 'Onde me encontrar',
-    titulo: 'Um espaço de acolhimento em Goiânia.',
+    titulo: 'Um espaço de acolhimento em Goiânia',
     endereco: site.endereco.completo,
     texto: 'Atendimento presencial aos sábados, mediante agendamento.',
     mapaTitle: 'Mapa de localização do consultório de Iocyene Barbosa no Jardim América, em Goiânia',
