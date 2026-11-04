@@ -26,7 +26,7 @@ export const textos = {
 
   sobre: {
     sobretitulo: 'Sobre mim',
-    titulo: 'Uma escuta atenta à sua singularidade.',
+    titulo: 'Uma escuta atenta à sua singularidade',
     paragrafos: [
       'Sou Iocyene Barbosa, psicanalista clínica. Meu trabalho é oferecer um ambiente seguro, ético e livre de julgamentos para quem busca compreender suas emoções, superar conflitos e reencontrar o equilíbrio psíquico.',
       'Acredito que a palavra tem um poder transformador. Muitas vezes, as dores que carregamos no corpo ou no cotidiano são sentimentos e pensamentos que ainda não encontraram um lugar para serem ditos. No processo analítico, construímos juntos esse espaço: um lugar onde a sua história é ouvida com respeito, no seu tempo e no seu ritmo.',
@@ -43,9 +43,9 @@ export const textos = {
 
   psicanalise: {
     sobretitulo: 'O que é psicanálise?',
-    titulo: 'Um lugar para o que ainda não foi dito.',
+    titulo: 'Um lugar para o que ainda não foi dito',
     texto:
-      'A psicanálise é um método de escuta e investigação do funcionamento psíquico. Através da fala livre e sem julgamentos, buscamos compreender as causas profundas dos desconfortos, dos padrões de repetição e das angústias. Diferente de abordagens focadas apenas no sintoma imediato, ela atua na origem das questões emocionais.',
+      'A psicanálise é um método de escuta e investigação do funcionamento psíquico. Através da fala livre, buscamos compreender as causas profundas dos desconfortos, dos padrões de repetição e das angústias. Diferente de abordagens focadas apenas no sintoma imediato, ela atua na origem das questões emocionais.',
     pilares: [
       {
         numero: '01',
@@ -81,7 +81,7 @@ export const textos = {
       rotuloIcone: 'PRESENCIAL',
       titulo: 'Atendimento presencial',
       texto:
-        'Um ambiente preparado para acolher a sua história com escuta, ética e privacidade. Consultório no Jardim América, Goiânia.',
+        'Um ambiente preparado para acolher a sua história com escuta, ética e privacidade. Consultório no Jardim América, em Goiânia.',
       horarios: formatarResumoModalidade('presencial'),
       botaoMapa: 'Ver localização ↗',
       botaoAgendar: 'Agendar presencial ↗',
@@ -122,7 +122,7 @@ export const textos = {
     titulo: 'Um espaço de acolhimento em Goiânia.',
     endereco: site.endereco.completo,
     texto: 'Atendimento presencial aos sábados, mediante agendamento.',
-    mapaTitle: 'Mapa de localização do consultório de Iocyene Barbosa no Jardim América, Goiânia',
+    mapaTitle: 'Mapa de localização do consultório de Iocyene Barbosa no Jardim América, em Goiânia',
     botaoMapa: 'Como chegar ↗',
     botaoWhatsapp: 'Agendar pelo WhatsApp',
   },
