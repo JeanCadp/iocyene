@@ -41,14 +41,14 @@ import Filete from './ui/Filete.astro';
 
         <h1
           id="titulo-hero"
-          class="font-titulo font-semibold text-3xl sm:text-4xl xl:text-5xl uppercase tracking-[0.1em] text-verde leading-tight"
+          class="font-frase font-semibold text-4xl sm:text-5xl xl:text-[3.5rem] text-texto leading-[1.12] tracking-[-0.01em]"
         >
-          {textos.hero.tituloPartes.inicio}<em
-            class="font-frase italic font-semibold normal-case text-[1.12em] text-verde-medio"
-            >{textos.hero.tituloPartes.destaque1}</em
-          >{textos.hero.tituloPartes.meio}<em
-            class="font-frase italic font-semibold normal-case text-[1.12em] text-verde-medio"
-            >{textos.hero.tituloPartes.destaque2}</em
+          {textos.hero.tituloPartes.inicio}<span
+            class="font-bold text-verde-destaque"
+            >{textos.hero.tituloPartes.destaque1}</span
+          >{textos.hero.tituloPartes.meio}<span
+            class="font-bold text-verde-destaque"
+            >{textos.hero.tituloPartes.destaque2}</span
           >{textos.hero.tituloPartes.fim}
         </h1>
 

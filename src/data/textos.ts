@@ -103,7 +103,7 @@ export const textos = {
     sobretitulo: 'Sessões de psicanálise',
     titulo: 'Agenda aberta',
     texto:
-      'Sessões de 45 a 50 minutos, em um espaço sigiloso e sem julgamentos, onde a sua história é ouvida no seu tempo.',
+      'Sessões de 45 a 50 minutos, em um espaço sigiloso, onde a sua história é ouvida no seu tempo.',
   },
 
   citacao: {
