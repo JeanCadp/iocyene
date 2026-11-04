@@ -131,7 +131,7 @@ export const textos = {
   contato: {
     sobretitulo: 'Vamos conversar?',
     titulo:
-      'Se chegou o momento de dar voz ao que incomoda por dentro, estou aqui para te acompanhar.',
+      'Se chegou o momento de dar voz ao que incomoda por dentro, estou aqui para te acompanhar',
     texto:
       'Entre em contato para saber mais sobre os atendimentos e consultar a disponibilidade de horários.',
     botaoWhatsapp: 'Conversar com Iocyene no WhatsApp ↗',
