@@ -20,6 +20,8 @@ const enderecoJardimAmerica = {
   bairro: 'Jardim América',
   cidade: 'Goiânia – GO',
   cep: 'CEP 74270-020',
+  linha1: 'Av. C-205, nº 400 · Jardim América',
+  linha2: 'Goiânia – GO · CEP 74270-020',
   completo: 'Av. C-205, nº 400 · Jardim América · Goiânia – GO · CEP 74270-020',
   mapsUrl: 'https://maps.app.goo.gl/z2EKtc8k4B73asrY9',
   mapsEmbedUrl:
@@ -36,6 +38,8 @@ const enderecoRevine = {
   bairro: 'Setor Sul',
   cidade: 'Goiânia – GO',
   cep: 'CEP 74093-080',
+  linha1: 'R. 126, 41 · Setor Sul',
+  linha2: 'Goiânia – GO · CEP 74093-080',
   completo: 'R. 126, 41 · Setor Sul · Goiânia – GO · CEP 74093-080',
   mapsUrl:
     'https://www.google.com/maps?q=Revine+Sa%C3%BAde+e+Bem-estar,+R.+126,+41,+Setor+Sul,+Goi%C3%A2nia+-+GO',

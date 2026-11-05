@@ -27,18 +27,19 @@ import TituloSecao from './ui/TituloSecao.astro';
         site.locais.map((local) => (
           <div class="bg-champanhe border border-dourado rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-sm">
             <div>
-              <div class="mb-3">
+              <div class="mb-4">
                 <span class="inline-block font-ui font-semibold text-xs sm:text-sm tracking-[0.1em] uppercase text-verde bg-areia border border-dourado/60 px-4 py-1.5 rounded-full">
                   {local.diasResumo}
                 </span>
               </div>
 
-              <h3 class="font-titulo font-semibold text-xl sm:text-2xl uppercase tracking-[0.08em] text-verde mb-2">
+              <h3 class="font-titulo font-semibold text-xl sm:text-2xl uppercase tracking-[0.08em] text-verde mb-2 min-h-0 sm:min-h-[4rem] flex items-center justify-center">
                 {local.nome}
               </h3>
 
-              <address class="not-italic font-frase text-lg sm:text-xl text-texto leading-relaxed mb-6">
-                {local.completo}
+              <address class="not-italic font-frase text-lg sm:text-xl text-texto leading-snug mb-6 min-h-0 sm:min-h-[3.5rem] flex flex-col justify-center">
+                <span class="block">{local.linha1}</span>
+                <span class="block">{local.linha2}</span>
               </address>
 
               <div class="overflow-hidden rounded-xl border border-dourado bg-areia mb-6">
