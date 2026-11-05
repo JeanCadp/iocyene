@@ -19,7 +19,7 @@ export const agenda: ItemAgenda[] = [
     linhas: [
       {
         rotulo: 'Presencial e online',
-        horarios: ['14h', '15h', '16h', '17h', '18h'],
+        horarios: ['15h', '16h', '17h', '18h'],
         nota: 'Presencial na Revine Saúde e Bem-estar · Setor Sul',
       },
       {
@@ -65,7 +65,7 @@ export function formatarResumoModalidade(
   separador = ' | ',
 ): string {
   if (modalidade === 'presencial') {
-    return 'Terça-feira (14h às 18h · Setor Sul) e Sábado (10h às 12h · Jardim América)';
+    return 'Terça-feira (15h às 18h · Setor Sul) e Sábado (10h às 12h · Jardim América)';
   }
-  return 'Terça-feira (14h às 20h), Quinta-feira (16h às 18h) e Sábado (10h às 12h)';
+  return 'Terça-feira (15h às 20h), Quinta-feira (16h às 18h) e Sábado (10h às 12h)';
 }

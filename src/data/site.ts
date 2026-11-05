@@ -32,7 +32,7 @@ const enderecoRevine = {
   id: 'revine',
   nome: 'Revine Saúde e Bem-estar',
   dia: 'Terça-feira',
-  diasResumo: 'Terça-feira · 14h às 18h',
+  diasResumo: 'Terça-feira · 15h às 18h',
   modalidade: 'Presencial e online',
   logradouro: 'R. 126, 41',
   bairro: 'Setor Sul',
