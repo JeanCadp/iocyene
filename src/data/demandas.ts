@@ -24,5 +24,10 @@ export const demandas: DemandaItem[] = [
     titulo: 'Compulsões e impulsividades',
     texto: 'Compreensão dos vazios e angústias que sustentam comportamentos compulsivos.',
   },
+  {
+    titulo: 'Lutos, rupturas e ressignificação de perdas',
+    texto:
+      'Suporte psíquico na elaboração da dor da morte e de grandes rupturas, oferecendo uma escuta acolhedora para atravessar a ausência, dar sentido ao invisível e reconstruir caminhos no seu próprio tempo.',
+  },
 ];
 
