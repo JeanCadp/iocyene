@@ -9,52 +9,66 @@ import TituloSecao from './ui/TituloSecao.astro';
   aria-labelledby="titulo-localizacao"
   class="py-20 md:py-28 bg-areia border-y border-dourado/40"
 >
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <TituloSecao
       sobretitulo={textos.localizacao.sobretitulo}
       titulo={textos.localizacao.titulo}
       id="titulo-localizacao"
     />
 
-    <div
-      class="bg-champanhe border border-dourado rounded-2xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto shadow-sm"
+    <p
+      class="font-frase italic font-semibold text-[24px] sm:text-[26px] leading-snug text-verde-medio text-center max-w-3xl mx-auto mb-12"
     >
-      <address
-        class="not-italic font-titulo font-semibold text-xl sm:text-2xl uppercase tracking-[0.1em] text-verde leading-relaxed mb-3"
-      >
-        {textos.localizacao.endereco}
-      </address>
+      {textos.localizacao.subtitulo}
+    </p>
 
-      <p
-        class="font-frase italic font-semibold text-[26px] leading-snug text-verde-medio mb-6"
-      >
-        {textos.localizacao.texto}
-      </p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-center">
+      {
+        site.locais.map((local) => (
+          <div class="bg-champanhe border border-dourado rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-sm">
+            <div>
+              <div class="mb-3">
+                <span class="inline-block font-ui font-semibold text-xs sm:text-sm tracking-[0.1em] uppercase text-verde bg-areia border border-dourado/60 px-4 py-1.5 rounded-full">
+                  {local.diasResumo}
+                </span>
+              </div>
 
-      <div class="overflow-hidden rounded-xl border border-dourado bg-areia">
-        <iframe
-          src={site.mapsEmbedUrl}
-          title={textos.localizacao.mapaTitle}
-          width="600"
-          height="450"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"
-          class="w-full h-[300px] sm:h-[380px] md:h-[420px] block"
-        ></iframe>
-      </div>
-    </div>
+              <h3 class="font-titulo font-semibold text-xl sm:text-2xl uppercase tracking-[0.08em] text-verde mb-2">
+                {local.nome}
+              </h3>
 
-    <div class="flex justify-center">
-      <a
-        href={site.mapsUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center justify-center rounded-full border-2 border-verde px-7 py-4 font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde hover:bg-verde hover:text-marfim transition-colors"
-      >
-        {textos.localizacao.botaoMapa}
-      </a>
+              <address class="not-italic font-frase text-lg sm:text-xl text-texto leading-relaxed mb-6">
+                {local.completo}
+              </address>
+
+              <div class="overflow-hidden rounded-xl border border-dourado bg-areia mb-6">
+                <iframe
+                  src={local.mapsEmbedUrl}
+                  title={`Mapa de localização - ${local.nome}`}
+                  width="600"
+                  height="450"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  class="w-full h-[280px] sm:h-[320px] block"
+                />
+              </div>
+            </div>
+
+            <div class="flex justify-center pt-2">
+              <a
+                href={local.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-full border-2 border-verde px-7 py-3.5 font-ui font-semibold text-sm sm:text-base tracking-[0.08em] uppercase text-verde hover:bg-verde hover:text-marfim transition-colors"
+              >
+                {textos.localizacao.botaoMapa}
+              </a>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

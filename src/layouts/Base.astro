@@ -6,20 +6,26 @@ import '../styles/global.css';
 const canonicalUrl = new URL(Astro.url.pathname, site.siteUrl).href;
 const ogImageUrl = new URL('/og.jpg', site.siteUrl).href;
 
-const extrairHora = (h: string): number => parseInt(h.replace(/\D/g, ''), 10);
-const formatarHoraIso = (hora: number): string =>
-  `${String(hora).padStart(2, '0')}:00`;
-
-const openingHoursSpecification = agenda.map((item) => {
-  const primeiraHora = extrairHora(item.horarios[0]);
-  const ultimaHora = extrairHora(item.horarios[item.horarios.length - 1]) + 1;
-  return {
+const openingHoursSpecification = [
+  {
     '@type': 'OpeningHoursSpecification',
-    dayOfWeek: item.dayOfWeekSchema,
-    opens: formatarHoraIso(primeiraHora),
-    closes: formatarHoraIso(ultimaHora),
-  };
-});
+    dayOfWeek: 'Tuesday',
+    opens: '14:00',
+    closes: '21:00',
+  },
+  {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: 'Thursday',
+    opens: '16:00',
+    closes: '19:00',
+  },
+  {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: 'Saturday',
+    opens: '10:00',
+    closes: '13:00',
+  },
+];
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -29,14 +35,24 @@ const jsonLd = {
   url: site.siteUrl,
   image: ogImageUrl,
   telephone: `+${site.telefoneE164}`,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: site.endereco.logradouro,
-    addressLocality: 'Goiânia',
-    addressRegion: 'GO',
-    postalCode: '74270-020',
-    addressCountry: 'BR',
-  },
+  address: [
+    {
+      '@type': 'PostalAddress',
+      streetAddress: site.enderecoRevine.logradouro,
+      addressLocality: 'Goiânia',
+      addressRegion: 'GO',
+      postalCode: '74093-080',
+      addressCountry: 'BR',
+    },
+    {
+      '@type': 'PostalAddress',
+      streetAddress: site.enderecoJardimAmerica.logradouro,
+      addressLocality: 'Goiânia',
+      addressRegion: 'GO',
+      postalCode: '74270-020',
+      addressCountry: 'BR',
+    },
+  ],
   sameAs: [site.instagramUrl],
   openingHoursSpecification,
 };

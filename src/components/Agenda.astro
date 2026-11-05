@@ -26,13 +26,25 @@ import TituloSecao from './ui/TituloSecao.astro';
     <ul class="max-w-xl mx-auto space-y-5 text-center mb-12">
       {
         agenda.map((item) => (
-          <li class="bg-champanhe border border-dourado rounded-2xl px-6 py-5 flex flex-col items-center justify-center">
+          <li class="bg-champanhe border border-dourado rounded-2xl p-6 sm:p-7 flex flex-col items-center justify-center shadow-sm">
             <p class="font-ui font-bold text-xl sm:text-2xl text-verde leading-tight">
               {item.dia}
             </p>
-            <p class="font-ui font-semibold text-base tracking-[0.1em] uppercase text-verde mt-1.5">
-              {item.modalidadeRotulo} · {formatarHorarios(item.horarios)}
-            </p>
+
+            <div class="w-full space-y-3 mt-3">
+              {item.linhas.map((linha) => (
+                <div class="pt-2.5 first:pt-0 border-t border-dourado/30 first:border-0">
+                  <p class="font-ui font-semibold text-sm sm:text-base tracking-[0.06em] sm:tracking-[0.08em] uppercase text-verde">
+                    <span class="text-verde-medio">{linha.rotulo}</span> · {formatarHorarios(linha.horarios)}
+                  </p>
+                  {linha.nota && (
+                    <p class="font-frase italic text-base sm:text-lg text-texto/90 mt-1">
+                      {linha.nota}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
           </li>
         ))
       }
