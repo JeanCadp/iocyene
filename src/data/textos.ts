@@ -81,7 +81,7 @@ export const textos = {
       rotuloIcone: 'PRESENCIAL',
       titulo: 'Atendimento presencial',
       texto:
-        'Ambientes preparados para acolher a sua história com escuta, ética e privacidade. Atendimentos presenciais no Setor Sul (Revine Saúde e Bem-estar) e no Jardim América, em Goiânia.',
+        'Ambientes preparados para acolher a sua história com escuta, ética e privacidade. Atendimentos presenciais no Setor Sul (Revine Saúde e Bem-estar) e no Jardim América (Instituto Superior de Psicanálise do Brasil), em Goiânia.',
       horarios: formatarResumoModalidade('presencial'),
       botaoMapa: 'Ver locais e mapas ↗',
       botaoAgendar: 'Agendar presencial ↗',
@@ -122,10 +122,10 @@ export const textos = {
     sobretitulo: 'Onde me encontrar',
     titulo: 'Locais de atendimento em Goiânia',
     subtitulo:
-      'Atendimentos presenciais às terças-feiras no Setor Sul e aos sábados no Jardim América, mediante agendamento.',
+      'Atendimentos presenciais às terças-feiras no Setor Sul (Revine) e aos sábados no Jardim América (Instituto Superior de Psicanálise do Brasil), mediante agendamento.',
     endereco: site.endereco.completo,
     texto:
-      'Atendimentos presenciais às terças-feiras na Revine (Setor Sul) e aos sábados no Jardim América.',
+      'Atendimentos presenciais às terças-feiras na Revine (Setor Sul) e aos sábados no Instituto Superior de Psicanálise do Brasil (Jardim América).',
     mapaTitle: 'Mapas de localização dos consultórios de Iocyene Barbosa em Goiânia',
     botaoMapa: 'Como chegar ↗',
     botaoWhatsapp: 'Agendar pelo WhatsApp',

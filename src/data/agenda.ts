@@ -41,12 +41,12 @@ export const agenda: ItemAgenda[] = [
   {
     dia: 'Sábado',
     dayOfWeekSchema: 'Saturday',
-    localPresencial: 'Consultório Jardim América',
+    localPresencial: 'Instituto Superior de Psicanálise do Brasil (Jardim América)',
     linhas: [
       {
         rotulo: 'Presencial e online',
         horarios: ['10h', '11h', '12h'],
-        nota: 'Presencial no Jardim América',
+        nota: 'Presencial no Instituto Superior de Psicanálise do Brasil · Jardim América',
       },
     ],
   },

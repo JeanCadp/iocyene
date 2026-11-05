@@ -19,7 +19,7 @@ export const faq: FaqItem[] = [
   {
     pergunta: 'Qual a diferença entre presencial e online?',
     resposta:
-      'Nenhuma em qualidade técnica, rigor ético e sigilo. O atendimento presencial acontece em Goiânia (às terças na Revine Saúde e Bem-estar no Setor Sul, e aos sábados no Jardim América), e o atendimento online é realizado por videochamada.',
+      'Nenhuma em qualidade técnica, rigor ético e sigilo. O atendimento presencial acontece em Goiânia (às terças na Revine Saúde e Bem-estar no Setor Sul, e aos sábados no Instituto Superior de Psicanálise do Brasil no Jardim América), e o atendimento online é realizado por videochamada.',
   },
   {
     pergunta: 'Como sei se a psicanálise é indicada para mim?',

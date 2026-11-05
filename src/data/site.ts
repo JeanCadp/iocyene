@@ -11,8 +11,8 @@ const whatsappMensagem =
 const whatsappUrl = `https://wa.me/${telefoneE164}?text=${encodeURIComponent(whatsappMensagem)}`;
 
 const enderecoJardimAmerica = {
-  id: 'jardim-america',
-  nome: 'Consultório Jardim América',
+  id: 'ispb',
+  nome: 'Instituto Superior de Psicanálise do Brasil',
   dia: 'Sábado',
   diasResumo: 'Sábado · 10h às 12h',
   modalidade: 'Presencial e online',
