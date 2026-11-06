@@ -87,7 +87,7 @@ export const site = {
   mapsUrl: enderecoRevine.mapsUrl,
   mapsEmbedUrl: enderecoRevine.mapsEmbedUrl,
 
-  siteUrl: import.meta.env.SITE ?? 'https://iocyene.vercel.app',
+  siteUrl: import.meta.env.SITE ?? 'https://iocyenepsicanalista.com.br',
   themeColor: '#0F3B36',
   meta: {
     title: 'Iocyene Barbosa | Psicanalista Clínica em Goiânia, GO',

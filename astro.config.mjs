@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: process.env.SITE_URL ?? 'https://iocyene.vercel.app',
+  site: process.env.SITE_URL ?? 'https://iocyenepsicanalista.com.br',
   output: 'static',
   integrations: [sitemap()],
   vite: {
